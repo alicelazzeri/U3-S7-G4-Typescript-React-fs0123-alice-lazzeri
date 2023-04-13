@@ -5,11 +5,13 @@ import { NewsProps } from "../interfaces/iNews";
 const NewsCard = ({ imageUrl, title, newsSite, id }: NewsProps) => {
   const navigate = useNavigate();
   return (
-    <Card>
-      <Card.Img variant="top" src={imageUrl} />
+    <Card id="card">
+      <Card.Img id="cardImg" variant="top" src={imageUrl} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{newsSite}</Card.Text>
+        <Card.Title className="text-truncate fs-6">{title}</Card.Title>
+        <Card.Text className="fw-light">
+          <small>{newsSite}</small>
+        </Card.Text>
         <Button onClick={() => navigate(`/detail/${id}`)} variant="outline-secondary">
           Read more
         </Button>
